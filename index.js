@@ -5,7 +5,7 @@ dirksImg.onclick = awoken;
 function awoken() {
     dirksImg.src = "./images/angryDirks.jpeg";
     dirksImg.onmouseover = null;
-    dirksImg.onClick = null;
+    dirksImg.onclick = null;
     document.getElementById("bg").style.backgroundColor = "red";
     count = 0;
     interv = setInterval(moveDirks, 5, count);

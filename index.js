@@ -4,6 +4,7 @@ dirksImg.onclick = awoken;
 
 function awoken() {
     dirksImg.src = "./images/angryDirks.jpeg";
+    dirksImg.onmouseover = null;
     document.getElementById("bg").style.backgroundColor = "red";
     count = 0;
     interv = setInterval(moveDirks, 5, count);
@@ -34,4 +35,5 @@ function grovel() {
 
 function reset() {
     dirksImg.src = "./images/sleepingDirks.jpeg";
+    dirksImg.onmouseover = awoken;
 }

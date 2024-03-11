@@ -5,6 +5,7 @@ dirksImg.onclick = awoken;
 function awoken() {
     dirksImg.src = "./images/angryDirks.jpeg";
     dirksImg.onmouseover = null;
+    dirksImg.onClick = null;
     document.getElementById("bg").style.backgroundColor = "red";
     count = 0;
     interv = setInterval(moveDirks, 5, count);
@@ -17,6 +18,9 @@ function moveDirks() {
         let y = Math.floor(Math.random() * 2);
         let x = Math.floor(Math.random() * 2);
         x = parseInt(dirksImg.style.left) + 5*directions[x];
+        if (x < 0) x = 0;
+        if (y < 0) y = 0;
+        if (x > 800) x = 800;
         y = parseInt(dirksImg.style.top) + 5*directions[y];
         dirksImg.style.top = y + "px";
         dirksImg.style.left = x + "px";
@@ -36,4 +40,5 @@ function grovel() {
 function reset() {
     dirksImg.src = "./images/sleepingDirks.jpeg";
     dirksImg.onmouseover = awoken;
+    dirksImg.onclick = awoken;
 }
